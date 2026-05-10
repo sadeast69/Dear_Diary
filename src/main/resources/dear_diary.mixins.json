@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.worldremembers.deardiary.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractHorseEntityMixin",
+    "ItemStackConsumeMixin",
+    "ItemFinishUsingMixin",
+    "PlayerStatAwardMixin",
+    "PlayerAdvancementTrackerMixin",
+    "RaidMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

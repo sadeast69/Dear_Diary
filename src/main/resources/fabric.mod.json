@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "dear_diary",
+  "version": "${version}",
+  "name": "World Remembers: Dear Diary",
+  "description": "A personal travel diary with manual notes and automatic memories for every player.",
+  "icon": "assets/dear_diary/icon.png",
+  "authors": [
+    "sadeast"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.worldremembers.deardiary.DearDiaryMod"
+    ],
+    "client": [
+      "com.worldremembers.deardiary.client.DearDiaryClientMod"
+    ]
+  },
+  "mixins": [
+    "dear_diary.mixins.json",
+    {
+      "config": "dear_diary.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
