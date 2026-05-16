@@ -26,7 +26,7 @@ The diary opens as an old journal with reading, writing, editing, filtering, and
 
 ## Current Version
 
-Version `1.0.0` targets Minecraft `1.21.1` and Java `21`.
+Version `1.0.1` targets Minecraft `1.21.1` and Java `21`.
 
 Fabric is the root project. NeoForge is supported through the nested `neoforge/` project.
 
@@ -45,6 +45,8 @@ Dear Diary works without any optional content mods. Compatibility activates only
 | Create | 19 events | NeoForge gameplay hooks. Fabric stays safe when the mod or hooks are absent. |
 | Farmer's Delight | 12 events | Fabric and NeoForge. Includes meal and feast milestones. |
 | Waystones | 5 events | Fabric and NeoForge. Includes an activated-waystones milestone. |
+| Fungal Infection: Spore | 8 events | NeoForge gameplay hooks. Fabric stays safe when the mod or hooks are absent. |
+| Scorched Guns | 8 events | NeoForge gameplay hooks. Fabric stays safe when the mod or hooks are absent. |
 
 ## Requirements
 

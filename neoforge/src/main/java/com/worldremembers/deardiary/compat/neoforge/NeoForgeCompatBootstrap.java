@@ -37,6 +37,12 @@ public final class NeoForgeCompatBootstrap {
         if (environment.isModLoaded(NeoForgeWaystonesCompat.MOD_ID)) {
             NeoForgeWaystonesCompat.register();
         }
+        if (environment.isModLoaded(NeoForgeSporeCompat.MOD_ID)) {
+            NeoForgeSporeCompat.register();
+        }
+        if (environment.isModLoaded(NeoForgeScorchedGunsCompat.MOD_ID)) {
+            NeoForgeScorchedGunsCompat.register();
+        }
         DearDiaryMod.LOGGER.debug("Dear Diary content compat scaffold initialized for {}", environment.loaderName());
     }
 }

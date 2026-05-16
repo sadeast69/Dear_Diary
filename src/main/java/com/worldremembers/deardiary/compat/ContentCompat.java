@@ -24,6 +24,8 @@ public final class ContentCompat {
     private static final String CREATE_MOD_ID = "create";
     private static final String FARMERS_DELIGHT_MOD_ID = "farmersdelight";
     private static final String WAYSTONES_MOD_ID = "waystones";
+    private static final String SPORE_MOD_ID = "spore";
+    private static final String SCGUNS_MOD_ID = "scguns";
     private static final String FIRST_TWILIGHT_FOREST_ENTRY = "twilightforest:first_twilight_forest_entry";
     private static final String FIRST_NAGA_DEFEATED = "twilightforest:first_naga_defeated";
     private static final String FIRST_LICH_DEFEATED = "twilightforest:first_lich_defeated";
@@ -185,6 +187,39 @@ public final class ContentCompat {
     private static final String WAYSTONES_ACTIVATED_WAYSTONES_5 =
             "waystones:activated_waystones_5";
     private static final String WAYSTONES_ACTIVATED_COUNTER = "waystones_activated";
+    private static final String SPORE_FIRST_MYCELIUM_INFECTION =
+            "spore:first_mycelium_infection";
+    private static final String SPORE_FIRST_INFECTED_HUMAN_DEFEATED =
+            "spore:first_infected_human_defeated";
+    private static final String SPORE_FIRST_EVOLVED_INFECTED_DEFEATED =
+            "spore:first_evolved_infected_defeated";
+    private static final String SPORE_FIRST_PROTO_HIVEMIND_DEFEATED =
+            "spore:first_proto_hivemind_defeated";
+    private static final String SPORE_FIRST_LABORATORY_VISIT =
+            "spore:first_laboratory_visit";
+    private static final String SPORE_FIRST_SCANNER_ACQUIRED =
+            "spore:first_scanner_acquired";
+    private static final String SPORE_INFECTED_KILLS_10 =
+            "spore:infected_kills_10";
+    private static final String SPORE_INFECTED_KILLS_50 =
+            "spore:infected_kills_50";
+    private static final String SPORE_INFECTED_KILLS_COUNTER = "spore_infected_kills";
+    private static final String SCGUNS_FIRST_GUN_BENCH_BUILT =
+            "scguns:first_gun_bench_built";
+    private static final String SCGUNS_FIRST_FIREARM_ACQUIRED =
+            "scguns:first_firearm_acquired";
+    private static final String SCGUNS_FIRST_AMMO_ACQUIRED =
+            "scguns:first_ammo_acquired";
+    private static final String SCGUNS_FIRST_BLUEPRINT_ACQUIRED =
+            "scguns:first_blueprint_acquired";
+    private static final String SCGUNS_FIRST_HEAVY_WEAPON_ACQUIRED =
+            "scguns:first_heavy_weapon_acquired";
+    private static final String SCGUNS_FIRST_RAID_FLARE_ACQUIRED =
+            "scguns:first_raid_flare_acquired";
+    private static final String SCGUNS_FIRST_ENEMY_DEFEATED =
+            "scguns:first_scguns_enemy_defeated";
+    private static final String SCGUNS_FIRST_BULLET_KILL =
+            "scguns:first_scguns_bullet_kill";
     private static final String FALLBACK_TEXT = "A Twilight Forest memory.";
     private static final String AETHER_FALLBACK_TEXT = "An Aether memory.";
     private static final String DEEPER_DARKER_FALLBACK_TEXT = "A Deeper and Darker memory.";
@@ -193,6 +228,8 @@ public final class ContentCompat {
     private static final String CREATE_FALLBACK_TEXT = "A Create memory.";
     private static final String FARMERS_DELIGHT_FALLBACK_TEXT = "A Farmer's Delight memory.";
     private static final String WAYSTONES_FALLBACK_TEXT = "A Waystones memory.";
+    private static final String SPORE_FALLBACK_TEXT = "A Fungal Infection: Spore memory.";
+    private static final String SCGUNS_FALLBACK_TEXT = "A Scorched Guns memory.";
 
     private ContentCompat() {
     }
@@ -228,6 +265,12 @@ public final class ContentCompat {
         }
         if (environment.isModLoaded(WAYSTONES_MOD_ID)) {
             registerWaystonesDefinitions();
+        }
+        if (environment.isModLoaded(SPORE_MOD_ID)) {
+            registerSporeDefinitions();
+        }
+        if (environment.isModLoaded(SCGUNS_MOD_ID)) {
+            registerScgunsDefinitions();
         }
     }
 
@@ -1027,6 +1070,128 @@ public final class ContentCompat {
         );
     }
 
+    private static void registerSporeDefinitions() {
+        registerSporeDefinition(
+                SPORE_FIRST_MYCELIUM_INFECTION,
+                DiaryCategory.RARE,
+                DiaryImportance.MAJOR,
+                15,
+                "The First Infection"
+        );
+        registerSporeDefinition(
+                SPORE_FIRST_INFECTED_HUMAN_DEFEATED,
+                DiaryCategory.COMBAT,
+                DiaryImportance.NORMAL,
+                10,
+                "Too Human"
+        );
+        registerSporeDefinition(
+                SPORE_FIRST_EVOLVED_INFECTED_DEFEATED,
+                DiaryCategory.COMBAT,
+                DiaryImportance.MAJOR,
+                15,
+                "The Infection Changed"
+        );
+        registerSporeDefinition(
+                SPORE_FIRST_PROTO_HIVEMIND_DEFEATED,
+                DiaryCategory.BOSSES,
+                DiaryImportance.MAJOR,
+                15,
+                "The Mind in the Growth"
+        );
+        registerSporeDefinition(
+                SPORE_FIRST_LABORATORY_VISIT,
+                DiaryCategory.EXPLORATION,
+                DiaryImportance.MAJOR,
+                15,
+                "The Infected Laboratory"
+        );
+        registerSporeDefinition(
+                SPORE_FIRST_SCANNER_ACQUIRED,
+                DiaryCategory.RARE,
+                DiaryImportance.NORMAL,
+                10,
+                "A Scanner for the Growth"
+        );
+        registerSporeMilestoneDefinition(
+                SPORE_INFECTED_KILLS_10,
+                DiaryCategory.COMBAT,
+                DiaryImportance.NORMAL,
+                10,
+                "Ten Infected Down",
+                SPORE_INFECTED_KILLS_COUNTER,
+                10
+        );
+        registerSporeMilestoneDefinition(
+                SPORE_INFECTED_KILLS_50,
+                DiaryCategory.COMBAT,
+                DiaryImportance.MAJOR,
+                15,
+                "Holding the Line",
+                SPORE_INFECTED_KILLS_COUNTER,
+                50
+        );
+    }
+
+    private static void registerScgunsDefinitions() {
+        registerScgunsDefinition(
+                SCGUNS_FIRST_GUN_BENCH_BUILT,
+                DiaryCategory.BUILDING,
+                DiaryImportance.NORMAL,
+                10,
+                "A Bench for Firearms"
+        );
+        registerScgunsDefinition(
+                SCGUNS_FIRST_FIREARM_ACQUIRED,
+                DiaryCategory.RARE,
+                DiaryImportance.MAJOR,
+                15,
+                "The First Firearm"
+        );
+        registerScgunsDefinition(
+                SCGUNS_FIRST_AMMO_ACQUIRED,
+                DiaryCategory.RESOURCES,
+                DiaryImportance.NORMAL,
+                10,
+                "Powder and Lead"
+        );
+        registerScgunsDefinition(
+                SCGUNS_FIRST_BLUEPRINT_ACQUIRED,
+                DiaryCategory.RARE,
+                DiaryImportance.MAJOR,
+                15,
+                "A Weapon on Paper"
+        );
+        registerScgunsDefinition(
+                SCGUNS_FIRST_HEAVY_WEAPON_ACQUIRED,
+                DiaryCategory.RARE,
+                DiaryImportance.MAJOR,
+                15,
+                "Too Heavy to Ignore"
+        );
+        registerScgunsDefinition(
+                SCGUNS_FIRST_RAID_FLARE_ACQUIRED,
+                DiaryCategory.RARE,
+                DiaryImportance.MAJOR,
+                15,
+                "A Flare for Trouble"
+        );
+        registerScgunsDefinition(
+                SCGUNS_FIRST_ENEMY_DEFEATED,
+                DiaryCategory.COMBAT,
+                DiaryImportance.NORMAL,
+                10,
+                "Armed Trouble"
+        );
+        registerScgunsDefinition(
+                SCGUNS_FIRST_BULLET_KILL,
+                DiaryCategory.COMBAT,
+                DiaryImportance.MAJOR,
+                15,
+                "The First Shot That Counted"
+        );
+    }
+
     private static void registerTwilightForestDefinition(
             String eventId,
             DiaryCategory category,
@@ -1371,6 +1536,112 @@ public final class ContentCompat {
                     baseKey + ".text." + index,
                     fallbackTitle,
                     WAYSTONES_FALLBACK_TEXT
+            );
+        }
+
+        DearDiaryEventRegistry.register(builder.build());
+    }
+
+    private static void registerSporeDefinition(
+            String eventId,
+            DiaryCategory category,
+            DiaryImportance importance,
+            int variantCount,
+            String fallbackTitle
+    ) {
+        if (DearDiaryEventRegistry.isRegistered(eventId)) {
+            return;
+        }
+
+        String baseKey = langBaseKey(eventId);
+        String titleKey = baseKey + ".title";
+        AutomaticEventDefinition.Builder builder = AutomaticEventDefinition.builder(eventId)
+                .source(SPORE_MOD_ID)
+                .category(category)
+                .importance(importance)
+                .triggerPolicy(TriggerPolicy.ONCE_PER_PLAYER)
+                .includeLocation(true)
+                .shareable(true);
+
+        for (int index = 0; index < variantCount; index++) {
+            builder.variant(
+                    Integer.toString(index),
+                    titleKey,
+                    baseKey + ".text." + index,
+                    fallbackTitle,
+                    SPORE_FALLBACK_TEXT
+            );
+        }
+
+        DearDiaryEventRegistry.register(builder.build());
+    }
+
+    private static void registerSporeMilestoneDefinition(
+            String eventId,
+            DiaryCategory category,
+            DiaryImportance importance,
+            int variantCount,
+            String fallbackTitle,
+            String counterId,
+            int threshold
+    ) {
+        if (DearDiaryEventRegistry.isRegistered(eventId)) {
+            return;
+        }
+
+        String baseKey = langBaseKey(eventId);
+        String titleKey = baseKey + ".title";
+        AutomaticEventDefinition.Builder builder = AutomaticEventDefinition.builder(eventId)
+                .source(SPORE_MOD_ID)
+                .category(category)
+                .importance(importance)
+                .triggerPolicy(TriggerPolicy.MILESTONE)
+                .milestoneCounter(counterId)
+                .milestoneThreshold(threshold)
+                .includeLocation(true)
+                .shareable(true);
+
+        for (int index = 0; index < variantCount; index++) {
+            builder.variant(
+                    Integer.toString(index),
+                    titleKey,
+                    baseKey + ".text." + index,
+                    fallbackTitle,
+                    SPORE_FALLBACK_TEXT
+            );
+        }
+
+        DearDiaryEventRegistry.register(builder.build());
+    }
+
+    private static void registerScgunsDefinition(
+            String eventId,
+            DiaryCategory category,
+            DiaryImportance importance,
+            int variantCount,
+            String fallbackTitle
+    ) {
+        if (DearDiaryEventRegistry.isRegistered(eventId)) {
+            return;
+        }
+
+        String baseKey = langBaseKey(eventId);
+        String titleKey = baseKey + ".title";
+        AutomaticEventDefinition.Builder builder = AutomaticEventDefinition.builder(eventId)
+                .source(SCGUNS_MOD_ID)
+                .category(category)
+                .importance(importance)
+                .triggerPolicy(TriggerPolicy.ONCE_PER_PLAYER)
+                .includeLocation(true)
+                .shareable(true);
+
+        for (int index = 0; index < variantCount; index++) {
+            builder.variant(
+                    Integer.toString(index),
+                    titleKey,
+                    baseKey + ".text." + index,
+                    fallbackTitle,
+                    SCGUNS_FALLBACK_TEXT
             );
         }
 

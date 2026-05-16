@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.1 - Optional compatibility refresh
+
+### Added
+
+- Added optional Fungal Infection: Spore compatibility with infection, laboratory, scanner, infected enemy, and infected kill milestone memories.
+- Added optional Scorched Guns compatibility with firearm workbench, weapon, ammunition, blueprint, raid flare, enemy defeat, and bullet-kill memories.
+
+### Changed
+
+- Refreshed Fabric and NeoForge release artifacts for the accepted optional compatibility set.
+
 ## 1.0.0 - Public release
 
 ### Added
